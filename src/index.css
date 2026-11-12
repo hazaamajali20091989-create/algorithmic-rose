@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html,body{margin:0;height:100%;background:#000;overflow:hidden;color:#e9d9b0}
+canvas{position:fixed;inset:0;display:block}
+#hint{position:fixed;left:0;right:0;bottom:14%;text-align:center;font:400 clamp(22px,4.5vw,32px) 'Aref Ruqaa',serif;color:#e8cf9a;text-shadow:0 0 18px #c9a55a99;opacity:0;transition:opacity 2s;pointer-events:none;z-index:3}
+#sc{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(90vw,600px);display:none;flex-direction:column;align-items:center;z-index:4}
+.rod{width:calc(100% + 30px);height:22px;border-radius:11px;background:linear-gradient(#4a2e10,#b8893f 30%,#f6e2a6 50%,#9a6d2e 72%,#3f2610);box-shadow:0 6px 26px #000c,0 0 34px #c9a55a55}
+#paper{width:100%;max-height:0;overflow:hidden;transition:max-height 3.2s cubic-bezier(.6,0,.2,1),opacity 1.5s;background:linear-gradient(90deg,#7d5d2b,#e6cf9a 7%,#f5e6bd 50%,#e6cf9a 93%,#7d5d2b);box-shadow:inset 0 0 70px #7a5420bb}
+#paper.open{max-height:calc(100dvh - 120px)}
+#poem{padding:30px 18px;text-align:center;direction:rtl;color:#34200d;font:400 clamp(15px,min(3.6vw,2.7vh),27px)/2.05 'Amiri',serif}
+.v{margin-bottom:.8em;opacity:0;filter:blur(6px);transition:opacity 2s,filter 2s}.v.on{opacity:1;filter:none}
+.v:last-child{margin-bottom:0}
+.orn{height:1px;margin:0 auto 14px;width:55%;background:linear-gradient(90deg,transparent,#9a6d2e,transparent)}
+#next{position:fixed;left:50%;bottom:6%;transform:translateX(-50%);z-index:6;display:none;opacity:0;transition:opacity 2s;background:#0009;border:1px solid #c9a55a;color:#e8cf9a;padding:12px 30px;border-radius:40px;font:400 clamp(18px,3.5vw,24px) 'Aref Ruqaa',serif;cursor:pointer;box-shadow:0 0 24px #c9a55a44}
+#fade{position:fixed;inset:0;background:#000;opacity:0;transition:opacity 2.2s;pointer-events:none;z-index:5}
+#fin{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;z-index:10;padding:24px}
+#bin{max-width:min(90vw,720px);text-align:center;overflow-wrap:anywhere;font:400 clamp(13px,3.9vw,20px)/1.9 ui-monospace,'Courier New',monospace;letter-spacing:.03em;color:#fff;text-shadow:0 0 6px #fff,0 0 22px #5aa8ff,0 0 50px #2a6cff;user-select:text;cursor:pointer}
+#bin::after{content:'▌';animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+#cp{margin-top:34px;opacity:0;transition:opacity 2s;font:400 clamp(20px,4vw,28px) 'Aref Ruqaa',serif;color:#cfe1ff;text-shadow:0 0 14px #5aa8ff88;cursor:pointer}
+
+html,body{height:100dvh;overscroll-behavior:none;-webkit-tap-highlight-color:transparent;user-select:none;touch-action:manipulation}
+#bin,#cp{user-select:text}
+#next{bottom:calc(6% + env(safe-area-inset-bottom,0px));min-height:52px;min-width:210px}
+#mean{margin-top:22px;opacity:0;transition:opacity 2s;text-align:center;font:400 clamp(20px,4.6vw,30px) 'Aref Ruqaa',serif;color:#fff;text-shadow:0 0 14px #5aa8ff}
